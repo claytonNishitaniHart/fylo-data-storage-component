@@ -1,0 +1,157 @@
+:root {
+  --Gradient: linear-gradient(to right, hsl(6, 100%, 80%), hsl(335, 100%, 65%));
+
+  --PaleBlue: hsl(243, 100%, 93%);
+  --GrayishBlue: hsl(229, 7%, 55%);
+  --DarkBlue: hsl(228, 56%, 26%);
+  --VeryDarkBlue: hsl(229, 57%, 11%);
+
+  font-family: "Raleway-Regular", serif;
+  font-size: 14px;
+  background-color: var(--VeryDarkBlue);
+  font-weight: 400;
+}
+
+.App {
+  display: grid;
+  place-items: center;
+  &-Image {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100vw;
+    min-width: 1440px;
+    z-index: -999;
+  }
+}
+
+.Box-Primary {
+  position: absolute;
+  bottom: 325px;
+  left: 300px;
+  background-color: var(--DarkBlue);
+  width: 350px;
+  height: 200px;
+  border-radius: 1vw 13vh 1vw 1vw;
+  &-Logo {
+    position: absolute;
+    top: 40px;
+    left: 40px;
+  }
+  &-Button {
+    position: absolute;
+    bottom: 40px;
+    background: var(--VeryDarkBlue);
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    &1 {
+      left: 40px;
+    }
+    &2 {
+      left: 105px;
+    }
+    &3 {
+      left: 170px;
+    }
+  }
+}
+
+.Box-Secondary {
+  position: absolute;
+  bottom: 325px;
+  left: 700px;
+  background-color: var(--DarkBlue);
+  border-radius: 10px;
+  width: 445px;
+  height: 70px;
+  padding: 40px;
+  &-Text {
+    color: var(--PaleBlue);
+    &-Bold {
+      font-weight: 700;
+    }
+  }
+  &-Capacity {
+    margin-top: 15px;
+    width: 100%;
+    height: 20px;
+    border-radius: 10px;
+    background-color: var(--VeryDarkBlue);
+    &-Slider {
+      height: 14px;
+      width: 4%;
+      background-image: var(--Gradient);
+      transform: translate(3px, 3px);
+      border-radius: 7px;
+      transition: width ease 1000ms;
+      &::after {
+        content: '';
+        position: absolute;
+        display: inline-block;
+        width: 10px;
+        height: 10px;
+        background-color: var(--PaleBlue);
+        transform: translate(-2px, 2px);
+        border-radius: 50%;
+        right: 0;
+      }
+    }
+    &-Min {
+      position: absolute;
+      top: 100px;
+      left: 40px;
+      color: var(--PaleBlue);
+    }
+    &-Max {
+      position: absolute;
+      top: 100px;
+      right: 40px;
+      color: var(--PaleBlue);
+    }
+  }
+  &-Remaining {
+    position: absolute;
+    top: -40px;
+    right: 40px;
+    width: 150px;
+    height: 75px;
+    background-color: white;
+    border-radius: 10px 10px 0 10px;
+    text-align: center;
+    &::after {
+      content: '';
+      position: absolute;
+      display: inline-block;
+      width: 0;
+      height: 0;
+      border-top: 20px solid white;
+      border-left: 20px solid transparent;
+      right: 0;
+      bottom: -20px;
+    }
+    &-Text {
+      position: relative;
+      color: var(--GrayishBlue);
+      font-weight: 700;
+      top: 7px;
+      &-Bold {
+        color: var(--VeryDarkBlue);
+        font-size: 2.5rem;
+      }
+    }
+  }
+}
+
+@font-face {
+  font-family: "Raleway-Regular", serif;
+  src: url("./font/Raleway-Regular.ttf");
+}
+
+//@font-face {
+//  font-family: "Raleway-ExtraBold", serif;
+//  src: url("./font/Raleway-ExtraBold.ttf");
+//}
